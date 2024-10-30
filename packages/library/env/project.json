@@ -1,5 +1,5 @@
 {
-  "name": "packages/library/env",
+  "name": "env",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "packages/library/env",
