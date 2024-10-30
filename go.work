@@ -1,3 +1,8 @@
 go 1.22
 
-use ./apps/api
+
+use (
+	./packages/apps/api
+	./packages/library/env
+	./packages/library/logger
+)

@@ -11,10 +11,10 @@ Monorepo powered by [NX](https://nx.dev/)
 
 ✨ **Create a GO library** ✨
 
-nx g @nx-go/nx-go:library library/go/`<name>`
+nx g @nx-go/nx-go:library packages/library/`<name>`
 
 
 
 ✨ **Create a GO application** ✨
 
-nx g @nx-go/nx-go:application apps/`<name>`
+nx g @nx-go/nx-go:application packages/apps/`<name>`
