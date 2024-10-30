@@ -3,6 +3,8 @@ go 1.22
 
 use (
 	./packages/apps/api
+	./packages/library/constants
 	./packages/library/env
 	./packages/library/logger
+	./packages/library/structs
 )
