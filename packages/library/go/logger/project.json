@@ -1,8 +1,8 @@
 {
-  "name": "structs",
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "name": "packages/library/go/logger",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "packages/library/structs",
+  "sourceRoot": "packages/library/go/logger",
   "tags": [],
   "targets": {
     "test": {

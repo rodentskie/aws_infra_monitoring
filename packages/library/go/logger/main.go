@@ -1,7 +1,7 @@
 package logger
 
 import (
-	"packages/library/env"
+	"packages/library/go/env"
 
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"

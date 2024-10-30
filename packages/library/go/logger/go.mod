@@ -1,4 +1,4 @@
-module packages/library/logger
+module packages/library/go/logger
 
 go 1.22
 

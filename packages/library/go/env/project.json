@@ -1,8 +1,8 @@
 {
-  "name": "constants",
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "name": "packages/library/go/env",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "packages/library/constants",
+  "sourceRoot": "packages/library/go/env",
   "tags": [],
   "targets": {
     "test": {

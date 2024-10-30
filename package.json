@@ -2,7 +2,9 @@
   "name": "@aws-infra-monitoring/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "tidy": "pnpm nx run-many -t tidy --parallel=5"
+  },
   "private": true,
   "devDependencies": {
     "@nx-go/nx-go": "^3.2.0",

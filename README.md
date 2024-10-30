@@ -11,7 +11,7 @@ Monorepo powered by [NX](https://nx.dev/)
 
 ✨ **Create a GO library** ✨
 
-nx g @nx-go/nx-go:library packages/library/`<name>`
+nx g @nx-go/nx-go:library packages/library/go/`<name>`
 
 
 

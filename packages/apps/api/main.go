@@ -7,9 +7,9 @@ import (
 	"log"
 	"net/http"
 	"packages/apps/api/routes"
-	"packages/library/constants"
-	"packages/library/env"
-	"packages/library/logger"
+	"packages/library/go/constants"
+	"packages/library/go/env"
+	"packages/library/go/logger"
 	"syscall"
 
 	"github.com/aws/aws-lambda-go/events"

@@ -3,7 +3,7 @@ package handlers
 import (
 	"encoding/json"
 	"net/http"
-	"packages/library/structs"
+	"packages/library/go/structs"
 )
 
 func IndexRequestHandler(w http.ResponseWriter, r *http.Request) {
