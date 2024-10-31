@@ -6,11 +6,20 @@ import (
 	"log"
 	"net/http"
 	awsquery "packages/library/go/aws_query"
+	"packages/library/go/env"
 	"packages/library/go/structs"
 )
 
 func GetCertificatesRequestHandler(w http.ResponseWriter, r *http.Request) {
-	cert, err := awsquery.GetACMCertificates(context.Background(), "ap-southeast-2")
+	defaultRegion := env.GetEnv("REGION", "ap-southeast-2")
+
+	urlQuery := r.URL.Query()
+	region := urlQuery.Get("region")
+	if region == "" {
+		region = defaultRegion
+	}
+
+	cert, err := awsquery.GetACMCertificates(context.Background(), region)
 	if err != nil {
 		log.Println(err)
 	}
