@@ -7,4 +7,5 @@ import (
 
 func MainRoutes(mux *http.ServeMux) {
 	mux.HandleFunc("/", handlers.IndexRequestHandler)
+	mux.HandleFunc("GET /certificates", handlers.GetCertificatesRequestHandler)
 }
