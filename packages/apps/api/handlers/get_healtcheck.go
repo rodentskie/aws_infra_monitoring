@@ -19,16 +19,32 @@ func GetHealthCheckRequestHandler(w http.ResponseWriter, r *http.Request) {
 		region = defaultRegion
 	}
 
-	err := awsquery.GetRoute53Metrics(context.Background(), region, "1c90567f-a5aa-40e2-a8fc-4d7cd0ea5d24")
+	healthChecks, err := awsquery.FetchHealthChecks(context.Background(), region)
 	if err != nil {
 		log.Println(err)
 	}
 
-	bodyBytes := structs.Response{
-		Message: "Welcome to AWS infra monitoring API.",
+	var data []structs.HealthCheckMetric
+	for _, hc := range healthChecks {
+		metric, err := awsquery.GetRoute53Metrics(context.Background(), region, hc.ID)
+		if err != nil {
+			log.Println(err)
+		}
+
+		if hc.Metrics == nil {
+			hc.Metrics = &metric
+		}
+
+		data = append(data, structs.HealthCheckMetric{
+			HealthCheck: hc,
+		})
 	}
 
-	j, err := json.Marshal(bodyBytes)
+	res := structs.HealthCheckMetricResponse{
+		Data: data,
+	}
+
+	j, err := json.Marshal(res)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
