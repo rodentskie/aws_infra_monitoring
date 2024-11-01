@@ -6,6 +6,8 @@ require (
 	github.com/aws/aws-sdk-go-v2 v1.32.3
 	github.com/aws/aws-sdk-go-v2/config v1.28.1
 	github.com/aws/aws-sdk-go-v2/service/acm v1.30.3
+	github.com/aws/aws-sdk-go-v2/service/cloudwatch v1.42.3
+	github.com/aws/aws-sdk-go-v2/service/route53 v1.46.0
 )
 
 require (
