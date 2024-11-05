@@ -90,14 +90,12 @@ func FetchHealthChecks(ctx context.Context, region string) ([]structs.HealthChec
 
 	var healthChecks []structs.HealthCheck
 
-	// Paginate through health checks
 	for paginator.HasMorePages() {
 		output, err := paginator.NextPage(ctx)
 		if err != nil {
 			return nil, fmt.Errorf("failed to list health checks: %v", err)
 		}
 
-		// Process each health check
 		for _, hc := range output.HealthChecks {
 			if hc.HealthCheckConfig != nil {
 				healthCheck := structs.HealthCheck{
